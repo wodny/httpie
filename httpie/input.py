@@ -634,6 +634,7 @@ def parse_items(items,
                 with open(os.path.expanduser(value), 'rb') as f:
                     value = (os.path.basename(value),
                              BytesIO(f.read()))
+                             # here we will have changes
             except IOError as e:
                 raise ParseError('"%s": %s' % (item.orig, e))
             target = files
